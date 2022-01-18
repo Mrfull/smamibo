@@ -1,0 +1,39 @@
+.index-table {
+    box-shadow: 0 0 16px rgba(0,0,0,.05);
+    background: #fff;
+    border-radius: 4px;
+    padding: 16px;
+}
+
+.index-table__table {
+    width: 100%;
+    border-collapse: collapse;
+    color: rgb(33, 37, 41);
+}
+
+.index-table__tr {
+    th {
+        font-weight: 700;
+    }
+
+    th, td {
+        padding: 12px;
+    }
+}
+.index-table__tr {
+    text-align: center;
+
+    border-top: 1px solid #dee2e6;
+
+    &-icon {
+        font-size: 16px;
+        color: rgba(0,0,0,.5);
+    }
+    &-title {
+        text-align: left;
+    }
+
+    &:nth-of-type(even) {
+        background-color: rgba(0,0,0,.05);
+    }
+}

@@ -1,0 +1,21 @@
+.header {
+    margin-left: 250px;
+    background: #fff;
+    padding: 8px;
+
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #dee2e6;
+}
+.header__icon {
+    font-size: 16px;
+    color: rgba(0,0,0,.5);
+    padding: 8px 16px;
+}
+.header__controls {
+
+}

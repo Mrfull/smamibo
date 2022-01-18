@@ -1,0 +1,14 @@
+@import "../local_modules/normalize.css/normalize.css";
+// @import "../local_modules/sweetalert2/dist/sweetalert2.min.css";
+@import "../local_modules/jquery-modal/jquery.modal.min.css";
+
+@import "utils/variables";
+@import "common/fonts";
+
+@import "common/global";
+@import "common/sidebar";
+@import "common/header";
+@import "common/content";
+
+@import "common/table-data";
+@import "common/index/index-table";

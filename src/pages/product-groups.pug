@@ -1,0 +1,23 @@
+extends common/layout
+
+block content-description-title
+    | Торговые точки
+block content-description-text
+    | В данном разделе Вы можете управлять Вашими торговыми точками, редактировать, добавлять и удалять их.
+
+block content
+    .table-data
+        table.table-data__table
+            tr.table-data__tr-header
+                -
+                    var items = []
+                each item in items
+                    th=item
+            -
+                var items = [
+                    {}
+                ]
+            each item in items
+                tr.table-data__tr
+                    td
+            tr.table-data__tr

@@ -1,0 +1,83 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+// html,
+// body {
+//     overflow-x: hidden;
+// }
+
+html {
+//     font-size: 10px;
+}
+
+body {
+    font-family: 'Gotham Pro', sans-serif;
+    background-color: #f4f6f9;
+}
+
+img {
+    max-width: 100%;
+}
+
+button {
+    padding: 0;
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+a {
+    font-family: inherit;
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.medium {
+    font-weight: 500;
+}
+.bold {
+    font-weight: 700;
+}
+
+.page {
+}
+
+.content {
+}
+
+
+@media screen and (max-width: 1240px) {
+    .page {
+        max-width: 952px;
+    }
+}
+@media screen and (max-width: 992px) {
+    .page {
+        max-width: 728px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .page {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 576px) {
+    .page {
+        padding: 0 10px;
+    }
+}
+

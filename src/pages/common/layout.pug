@@ -1,0 +1,38 @@
+doctype html
+html(lang="ru")
+    block head
+        head
+            meta(charset="utf-8")
+            block title
+                title Title your site
+            meta(content="width=device-width, initial-scale=1" name="viewport")
+            meta(content="ie=edge" http-equiv="x-ua-compatible")
+            // link(rel="shortcut icon" href="img/favicon.png" type="image/png")
+
+            link(rel="stylesheet" href="css/style.min.css")
+            script(src="https://kit.fontawesome.com/ca5675cd62.js" crossorigin="anonymous")
+
+            // include fonts
+    body
+        include variables
+
+        .page
+            include header
+            include sidebar
+            .content
+                .content__inner
+                    .content-description.content__description
+                        h2.content-description__title
+                            block content-description-title
+                                | Главная страница
+                        p.content-description__text
+                            block content-description-text
+                                | Текст
+                    .content__main
+                        block content
+                .content__sidebar
+                    .content-chart.content__chart Chart
+                    .content-history.content__history History
+        block scripts
+            script(src='js/main.min.js')
+

@@ -1,0 +1,67 @@
+extends common/layout
+
+block content-description-title
+    | Клиенты
+block content-description-text
+    | В данном разделе Вы можете управлять Вашими клиентами, редактировать, добавлять и удалять их.
+
+block content
+    .table-data
+        table.table-data__table
+            tr.table-data__tr-header
+                -
+                    var items = ["Имя", "Фамилия", "Адрес", "Телефон", "Дата рождения", "Группа", "Изменить", "Удалить", "Активный"]
+                each item in items
+                    th=item
+            -
+                var items = [
+                    {
+                        name: 'Имя 1',
+                        surname: 'Фамилия 1 ',
+                        address: 'Город, улица, номер дома, квартира',
+                        phone: '+38-(012)-123-45-67',
+                        date_of_birth: 'ЧЧ.ММ.ГГГГ ',
+                        active: true
+                    },
+                    {
+                        name: 'Имя 1',
+                        surname: 'Фамилия 1 ',
+                        address: 'Город, улица, номер дома, квартира',
+                        phone: '+38-(012)-123-45-67',
+                        date_of_birth: 'ЧЧ.ММ.ГГГГ ',
+                        active: true
+                    },
+                    {
+                        name: 'Имя 1',
+                        surname: 'Фамилия 1 ',
+                        address: 'Город, улица, номер дома, квартира',
+                        phone: '+38-(012)-123-45-67',
+                        date_of_birth: 'ЧЧ.ММ.ГГГГ ',
+                        active: true
+                    }
+                ]
+            each item in items
+                tr.table-data__tr
+                    td=item.name
+                    td=item.surname
+                    td=item.address
+                    td=item.phone
+                    td=item.date_of_birth
+                    td
+                        .table-data__td-horizontal
+                            a(href="#").table-data__link Посмотреть
+                            | |
+                            a(href="#").table-data__link Добавить
+                            | |
+                            a(href="#").table-data__link Изменить
+                    td
+                        a(href="#").table-data__link Изменить
+                    td
+                        a(href="#").table-data__link Удалить
+                    td
+                        if item.active
+                            i(class="fas fa-check").table-data__icon
+            tr.table-data__tr
+                td.table-data__td-horizontal.table-data__text-left.table-data__add-tr
+                    i(class="fas fa-plus").table-data__icon.table-data__add-tr-icon
+                    | Добавить клиента

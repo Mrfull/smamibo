@@ -1,0 +1,70 @@
+extends common/layout
+
+block content-description-title
+    | Главная страница
+block content-description-text
+
+block content
+    .index-table
+        table.index-table__table
+            -
+                var items = [
+                    {
+                        icon: '<i class="fas fa-user-plus"></i>',
+                        title: 'Новых пользователей',
+                        stat_today: 'Кол-во',
+                        stat_week: 'Кол-во',
+                        stat_month: 'Кол-во',
+                        stat_year: 'Кол-во'
+                    },
+                    {
+                        icon: '<i class="fas fa-shopping-cart"></i>',
+                        title: 'Новых заказов',
+                        stat_today: 'Кол-во | Сумма ',
+                        stat_week: 'Кол-во | Сумма ',
+                        stat_month: 'Кол-во | Сумма ',
+                        stat_year: 'Кол-во | Сумма '
+                    },
+                    {
+                        icon: '<i class="fas fa-strikethrough"></i>',
+                        title: 'Брошеных заказов',
+                        stat_today: 'Кол-во | Сумма ',
+                        stat_week: 'Кол-во | Сумма ',
+                        stat_month: 'Кол-во | Сумма ',
+                        stat_year: 'Кол-во | Сумма '
+                    },
+                    {
+                        icon: '<i class="fas fa-coins"></i>',
+                        title: 'Оплаченных заказов',
+                        stat_today: 'Кол-во | Сумма ',
+                        stat_week: 'Кол-во | Сумма ',
+                        stat_month: 'Кол-во | Сумма ',
+                        stat_year: 'Кол-во | Сумма '
+                    },
+                    {
+                        icon: '<i class="fas fa-envelope"></i>',
+                        title: 'Сообщения',
+                        stat_today: 'Кол-во',
+                        stat_week: 'Кол-во',
+                        stat_month: 'Кол-во',
+                        stat_year: 'Кол-во'
+                    }
+                ]
+            tr.index-table__tr
+                th
+                th
+                th Сегодня
+                th На этой
+                th В этом месяце
+                th В этом году
+                th
+            each item in items
+                tr.index-table__tr
+                    td.index-table__tr-icon!= item.icon
+                    td.index-table__tr-title= item.title
+                    td= item.stat_today
+                    td= item.stat_week
+                    td= item.stat_month
+                    td= item.stat_year
+                    td.index-table__tr-icon
+                        i(class="fas fa-chart-bar")

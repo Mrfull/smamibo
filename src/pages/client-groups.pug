@@ -1,0 +1,70 @@
+extends common/layout
+
+block content-description-title
+    | Группы клиентов
+block content-description-text
+    | В данном разделе Вы можете управлять Вашими группами (сегментами) ваших клиентов, редактировать, добавлять, удалять
+    | назначать им бонусы и скидки.
+
+block content
+    .table-data
+        table.table-data__table
+            tr.table-data__tr-header
+                -
+                    var items = ["Имя группы", "Бесплатная доставка", "% скидки", "Описание группы", "Участники группы", "Кол-во участников", "Изменить", "Удалить", "Активная"]
+                each item in items
+                    th=item
+            -
+                var items = [
+                    {
+                        name: 'Имя 1 ',
+                        delivery: true,
+                        discount: 'число',
+                        description: 'Текстовое описание группы ',
+                        amount: 'число',
+                        active: true
+                    },
+                    {
+                        name: 'Имя 1 ',
+                        delivery: false,
+                        discount: 'число',
+                        description: 'Текстовое описание группы ',
+                        amount: 'число',
+                        active: true
+                    },
+                    {
+                        name: 'Имя 1 ',
+                        delivery: true,
+                        discount: 'число',
+                        description: 'Текстовое описание группы ',
+                        amount: 'число',
+                        active: true
+                    }
+                ]
+            each item in items
+                tr.table-data__tr
+                    td=item.name
+                    td
+                        if item.delivery
+                            i(class="fas fa-check").table-data__icon
+                    td=item.discount
+                    td=item.description
+                    td
+                        .table-data__td-horizontal
+                            a(href="#").table-data__link Посмотреть
+                            | |
+                            a(href="#").table-data__link Добавить
+                            | |
+                            a(href="#").table-data__link Изменить
+                    td=item.amount
+                    td
+                        a(href="#").table-data__link Изменить
+                    td
+                        a(href="#").table-data__link Удалить
+                    td
+                        if item.active
+                            i(class="fas fa-check").table-data__icon
+            tr.table-data__tr
+                td.table-data__td-horizontal.table-data__text-left.table-data__add-tr
+                    i(class="fas fa-plus").table-data__icon.table-data__add-tr-icon
+                    | Добавить группу

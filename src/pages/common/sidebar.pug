@@ -1,0 +1,33 @@
+.sidebar
+    a(href="/").sidebar__logo Logo
+
+    // Scrollable part
+    .sidebar__inner
+
+        // Sidebar user?
+
+        .sidebar-menu.sidebar__menu
+            -
+                var items = [
+                    { text: 'Торговые точки ', link: '/outlets.html' },
+                    { text: 'Клиенты', link: '#' },
+                    { text: 'Товары', link: '#' },
+                    { text: 'Акции', link: '#' },
+                    { text: 'Сообщения', link: '#' },
+                    { text: 'Опросы', link: '#' },
+                    { text: 'Заказы', link: '#' },
+                    { text: 'Отчеты', link: '#' },
+                    { text: 'Администрирование', link: '#' }
+                ]
+            each item, index in items
+                a(href=item.link class= index==0 ? "active" : '').sidebar-menu__item
+                    i(class="far fa-circle").sidebar-menu__item-icon
+                    =item.text
+
+        ul.sidebar-details.sidebar__details
+            li.sidebar-details__item
+                .sidebar-details__item-title Support e-mail:
+                a(href="mailto:support@smamibo.com").sidebar-details__item-link support@smamibo.com
+            li.sidebar-details__item
+                .sidebar-details__item-title tel:
+                a(href="tel:380969494958").sidebar-details__item-link +38-096-94-94-958

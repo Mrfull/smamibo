@@ -1,0 +1,74 @@
+extends common/layout
+
+block content-description-title
+    | Товары
+block content-description-text
+    | В данном разделе Вы можете управлять Вашими товарами, редактировать, добавлять, удалять.
+
+block content
+    .table-data
+        table.table-data__table
+            tr.table-data__tr-header
+                -
+                    var items = ["Имя товара", "Ед. измерения", "Цена", "Склад", "Группа товара", "Описание товара", "Фото", "Изменить", "Удалить", "Активный"]
+                each item in items
+                    th=item
+            -
+                var items = [
+                    {
+                        name: 'Имя 1',
+                        unit: '',
+                        price: 'число',
+                        warehouse: 'число',
+                        group: 'Группа ',
+                        description: 'Текстовое описание товара П',
+                        active: false
+                    },
+                    {
+                        name: 'Имя 1',
+                        unit: '',
+                        price: 'число',
+                        warehouse: 'число',
+                        group: 'Группа ',
+                        description: 'Текстовое описание товара П',
+                        active: false
+                    },
+                    {
+                        name: 'Имя 1',
+                        unit: '',
+                        price: 'число',
+                        warehouse: 'число',
+                        group: 'Группа ',
+                        description: 'Текстовое описание товара П',
+                        active: true
+                    }
+                ]
+            each item in items
+                tr.table-data__tr
+                    td=item.name
+                    td=item.unit
+                    td=item.price
+                    td=item.warehouse
+                    td=item.group
+                    td=item.description
+                    td
+                        .table-data__td-horizontal
+                            a(href="#").table-data__link Посмотреть
+                            | |
+                            a(href="#").table-data__link Добавить
+                    td
+                        a(href="#").table-data__link Изменить
+                    td
+                        a(href="#").table-data__link Удалить
+                    td
+                        if item.active
+                            i(class="fas fa-check").table-data__icon
+            tr.table-data__tr
+                td
+                    .table-data__td-horizontal.table-data__text-left.table-data__add-tr
+                        i(class="fas fa-plus").table-data__icon.table-data__add-tr-icon
+                        | Добавить товар
+                td
+                    .table-data__td-horizontal.table-data__text-left.table-data__add-tr
+                        i(class="fas fa-plus").table-data__icon.table-data__add-tr-icon
+                        | Загрутить

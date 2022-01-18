@@ -1,0 +1,77 @@
+extends common/layout
+
+block content-description-title
+    | Торговые точки
+block content-description-text
+    | В данном разделе Вы можете управлять Вашими торговыми точками, редактировать, добавлять и удалять их.
+
+block content
+    .table-data
+        table.table-data__table
+            tr.table-data__tr-header
+                -
+                    var items = ["Название торговой точки", "Скидки", "Бонусы", "Адрес", "GPS координаты", "Телефон", "QR код точки", "Изменить", "Удалить", "Активная"]
+                each item in items
+                    th=item
+            -
+                var items = [
+                    {
+                        name: "Торговая точка 1",
+                        stocks: true,
+                        bonuses: true,
+                        address: "Город, улица, номер дома",
+                        gps: "41.40338, 2.17403",
+                        phone: "+38-(012)-123-45-67",
+                        active: true
+                    },
+                    {
+                        name: "Торговая точка 2",
+                        stocks: false,
+                        bonuses: false,
+                        address: "Город, улица, номер дома",
+                        gps: "41.40338, 2.17403",
+                        phone: "+38-(012)-123-45-67",
+                        active: true
+                    },
+                    {
+                        name: "Торговая точка 3",
+                        stocks: true,
+                        bonuses: false,
+                        address: "Город, улица, номер дома",
+                        gps: "41.40338, 2.17403",
+                        phone: "+38-(012)-123-45-67",
+                        active: true
+                    }
+                ]
+            each item in items
+                tr.table-data__tr
+                    td=item.name
+                    td
+                        if item.stocks
+                            i(class="fas fa-check").table-data__icon
+                    td
+                        if item.bonuses
+                            i(class="fas fa-check").table-data__icon
+                    td=item.address
+                    td.table-data__td-horizontal
+                        =item.gps
+                        i(class="fas fa-map-marker-alt").table-data__icon
+                    td=item.phone
+                    td
+                        i(class="fas fa-qrcode").table-data__icon
+                    td
+                        a(href="#modal-outlets-edit" rel="modal:open").table-data__link Изменить1
+                    td
+                        a(href="#").table-data__link Удалить
+                    td
+                        if item.active
+                            i(class="fas fa-check").table-data__icon
+            tr.table-data__tr
+                td.table-data__td-horizontal.table-data__text-left.table-data__add-tr
+                    i(class="fas fa-plus").table-data__icon.table-data__add-tr-icon
+                    | Добавить торговую точку
+
+    .modal#modal-outlets-edit.modal-outlets-edit
+        p Some text
+        a(href="#" rel="modal:close") Close
+
